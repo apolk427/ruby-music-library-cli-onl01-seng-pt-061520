@@ -5,8 +5,8 @@ class MusicLibraryController
      MusicImporter.new(path).import
    end
 
-    def call 
-     input = nil 
+    def call
+     input = nil
 
       until input == "exit"
      puts "Welcome to your music library!"
@@ -20,9 +20,9 @@ class MusicLibraryController
  puts "What would you like to do?"
      input = gets.strip
      if input == "list songs"
-       list_songs 
+       list_songs
        elsif input == "list artists"
-       list_artists 
+       list_artists
        elsif input == "list genres"
        list_genres
        elsif input == "list artist"
@@ -42,11 +42,11 @@ class MusicLibraryController
 
   def list_artists
    Artist.all.sort{|a,b| a.name <=> b.name}.each_with_index{|a,i| puts "#{i+1}. #{a.name}"}
- end 
+ end
 
   def list_genres
    Genre.all.sort{|a,b| a.name <=> b.name}.each_with_index{|g,i| puts "#{i+1}. #{g.name}"}
- end 
+ end
 
   def list_songs_by_artist
  puts "Please enter the name of an artist:"
@@ -68,7 +68,7 @@ class MusicLibraryController
 
   def play_song
    puts "Which song number would you like to play?"
-   input = gets.strip.to_i 
+   input = gets.strip.to_i
 
     if input >= 1 && input <= Song.all.count
 
