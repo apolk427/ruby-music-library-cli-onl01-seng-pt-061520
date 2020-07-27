@@ -1,4 +1,4 @@
-module Concerns 
+module Concerns
 module Findable
 
   def find_by_name(name)
@@ -9,10 +9,8 @@ module Findable
     if find_by_name(name).nil?
     self.create(name)
   else
-    find_by_name(name)  
+    find_by_name(name)
   end
 end
 end
 end
-
-    
